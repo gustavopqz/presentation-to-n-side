@@ -9,6 +9,8 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { AnimatePresence } from "framer-motion";
+import { Nav, Footer } from "../components/Nav";
 
 function NotFoundComponent() {
   return (
