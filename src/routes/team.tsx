@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import {
-  Brain, Cloud, Code2, Container, Globe2, Github, Handshake, HeartHandshake,
-  Languages, Linkedin, Mail, MessagesSquare, Mountain, Smile, Sparkles, Wrench,
+  Brain, Cloud, Code2, Container, Globe2, Handshake, HeartHandshake,
+  Languages, Mail, MessagesSquare, Mountain, Smile, Sparkles, Wrench,
 } from "lucide-react";
 import { PageShell, SectionLabel, Reveal, GlassCard, Divider } from "../components/ui-kit";
 
