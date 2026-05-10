@@ -116,7 +116,13 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <div className="dark min-h-screen relative">
+        <Nav />
+        <AnimatePresence mode="wait">
+          <Outlet />
+        </AnimatePresence>
+        <Footer />
+      </div>
     </QueryClientProvider>
   );
 }
