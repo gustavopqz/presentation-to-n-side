@@ -9,6 +9,8 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { AnimatePresence } from "framer-motion";
+import { Nav, Footer } from "../components/Nav";
 
 function NotFoundComponent() {
   return (
@@ -72,19 +74,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Gustavo Pasqua — Software Engineer" },
+      { name: "description", content: "A storytelling experience prepared for N-SIDE — engineering, growth and people." },
+      { name: "author", content: "Gustavo Pasqua" },
+      { property: "og:title", content: "Gustavo Pasqua — Software Engineer" },
+      { property: "og:description", content: "Beyond the resume: an interview presentation crafted for N-SIDE." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap",
       },
     ],
   }),
@@ -113,7 +118,13 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <div className="dark min-h-screen relative">
+        <Nav />
+        <AnimatePresence mode="wait">
+          <Outlet />
+        </AnimatePresence>
+        <Footer />
+      </div>
     </QueryClientProvider>
   );
 }
