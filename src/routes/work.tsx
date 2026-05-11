@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { Cpu, GitBranch, Layers, Network, ShieldCheck, Sprout, Target, Users, Workflow, Database } from "lucide-react";
-import { PageShell, SectionLabel, Reveal, GlassCard, Divider } from "../components/ui-kit";
+import { Cpu, Database, GitBranch, Layers, Network, ShieldCheck, Sprout, Target, Users, Workflow } from "lucide-react";
+import { Divider, GlassCard, PageShell, Reveal, SectionLabel } from "../components/ui-kit";
 
 export const Route = createFileRoute("/work")({
   head: () => ({
@@ -19,8 +19,8 @@ const projects = [
   {
     tag: "Enterprise Integration",
     title: "Integration HUB",
-    body: "A central system to integrate different platforms across the business and optimize operational efficiency. Replaced fragile point-to-point flows with a maintainable, observable layer.",
-    metrics: [["Platforms", "10+"], ["Latency", "−60%"], ["Uptime", "99.9%"]],
+    body: "A central system to integrate different ERPs, fintechs and B2B E-Commerce platforms and optimize operational efficiency. Replaced fragile point-to-point flows with a maintainable, observable layer.",
+    metrics: [["ERPs", "70+"], ["Latency", "−60%"], ["Uptime", "99.9%"]],
   },
   {
     tag: "Social Impact",
@@ -46,14 +46,13 @@ const principles = [
 ];
 
 const stack = [
-  "Node.js", "TypeScript", "React", "Angular", "Docker",
-  "MongoDB", "Oracle SQL", "REST APIs", "Git", "CI/CD",
+  "Node.js", "TypeScript", "Angular", "Docker",
+  "MongoDB", "Oracle SQL", "REST APIs", "Swagger"
 ];
 
 const career = [
-  { period: "2025 — Now", role: "Full-Stack Software Engineer", focus: "Integrations, architecture, full-stack delivery." },
-  { period: "2023 — 2025", role: "Software Engineer", focus: "Node.js, Angular, MongoDB. Backend and integrations at scale." },
-  { period: "2021 — 2023", role: "Software Engineer", focus: "Delphi & Oracle in legacy enterprise systems — learned the value of maintainability." },
+  { period: "2022 — 2023", role: "Full-Stack Software Engineer at Grupo Nobre", focus: "Node.js (Express.js), Angular, MongoDB and SQLServer. Hospitals, schools and colleges systems." },
+  { period: "2023 — NOW", role: "Full-Stack Software Engineer at DevIT", focus: "Node.js (NestJS), Angular, Oracle and Delphi. Backend and integrations at scale." },
 ];
 
 function WorkPage() {
@@ -178,7 +177,7 @@ function WorkPage() {
 
         <div className="mt-12 grid md:grid-cols-3 gap-6">
           {[
-            { icon: Network, t: "Integrations", d: "REST, message-driven, enterprise legacy bridges." },
+            { icon: Network, t: "Integrations", d: "REST, event-driven, enterprise legacy bridges." },
             { icon: Database, t: "Data", d: "MongoDB, Oracle SQL — pragmatic data modelling." },
             { icon: Cpu, t: "Architecture", d: "Service boundaries, observability, maintainability." },
           ].map(({ icon: Icon, t, d }, i) => (

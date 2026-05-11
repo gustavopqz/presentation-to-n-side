@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { ArrowRight, Plane, Compass, Heart, Sparkles } from "lucide-react";
-import { PageShell, SectionLabel, Reveal, GlassCard, Divider } from "../components/ui-kit";
+import { ArrowRight, Compass, Heart, Plane, Sparkles } from "lucide-react";
+import { Divider, GlassCard, PageShell, Reveal, SectionLabel } from "../components/ui-kit";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -16,8 +16,9 @@ export const Route = createFileRoute("/")({
 });
 
 const timeline = [
-  { year: "2000", title: "Born in Brazil", text: "Raised with values of family, dedication and gratitude." },
-  { year: "2021", title: "First engineering role", text: "Started building software professionally — learning by shipping." },
+  { year: "1999", title: "Born in Brazil", text: "Raised with values of family, dedication and gratitude." },
+  { year: "2022", title: "First engineering role at Grupo Nobre", text: "Started building software professionally in a group of companies." },
+  { year: "2023", title: "DevIT Solutions", text: "The job I'm currently in, by current job. Focused on integrations with industry giants like AB InBev and Unilever." },
   { year: "Feb 2026", title: "Arrived in Europe", text: "A long-planned new chapter begins." },
   { year: "Apr 2026", title: "Settled in Leuven", text: "Looking for a team to grow with — both as an engineer and as a person." },
 ];
@@ -34,7 +35,7 @@ function BeyondPage() {
           <h1 className="mt-6 font-display text-5xl md:text-7xl lg:text-8xl leading-[0.95] text-balance">
             Hi, I'm <span className="grad-text">Gustavo Pasqua</span>.
             <br />
-            <span className="text-muted-foreground">A Full-Stack Software Engineer building with people in mind.</span>
+            <span className="text-muted-foreground">A Brazilian/Italian Full-Stack Software Engineer building with people in mind.</span>
           </h1>
         </Reveal>
         <Reveal delay={0.2}>
@@ -65,9 +66,9 @@ function BeyondPage() {
         {/* Floating stats */}
         <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            { k: "25", v: "Years young" },
+            { k: "26", v: "Years young" },
             { k: "BR → BE", v: "New chapter" },
-            { k: "4y+", v: "Engineering" },
+            { k: "4y", v: "Engineering" },
             { k: "∞", v: "Curiosity" },
           ].map((s, i) => (
             <Reveal key={s.v} delay={0.05 * i}>
@@ -122,7 +123,7 @@ function BeyondPage() {
       <section>
         <Reveal><SectionLabel>A short timeline</SectionLabel></Reveal>
         <Reveal delay={0.1}>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl">From São Paulo to Leuven.</h2>
+          <h2 className="mt-4 font-display text-4xl md:text-5xl">From Brazil to Leuven.</h2>
         </Reveal>
         <ol className="mt-12 relative border-l border-border/80 ml-3 space-y-10">
           {timeline.map((t, i) => (
