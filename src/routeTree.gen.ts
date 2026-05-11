@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WorkRouteImport } from './routes/work'
+import { Route as WhyNsideRouteImport } from './routes/why-nside'
 import { Route as TeamRouteImport } from './routes/team'
 import { Route as IndexRouteImport } from './routes/index'
 
 const WorkRoute = WorkRouteImport.update({
   id: '/work',
   path: '/work',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WhyNsideRoute = WhyNsideRouteImport.update({
+  id: '/why-nside',
+  path: '/why-nside',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TeamRoute = TeamRouteImport.update({
@@ -32,30 +38,34 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/team': typeof TeamRoute
+  '/why-nside': typeof WhyNsideRoute
   '/work': typeof WorkRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/team': typeof TeamRoute
+  '/why-nside': typeof WhyNsideRoute
   '/work': typeof WorkRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/team': typeof TeamRoute
+  '/why-nside': typeof WhyNsideRoute
   '/work': typeof WorkRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/team' | '/work'
+  fullPaths: '/' | '/team' | '/why-nside' | '/work'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/team' | '/work'
-  id: '__root__' | '/' | '/team' | '/work'
+  to: '/' | '/team' | '/why-nside' | '/work'
+  id: '__root__' | '/' | '/team' | '/why-nside' | '/work'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   TeamRoute: typeof TeamRoute
+  WhyNsideRoute: typeof WhyNsideRoute
   WorkRoute: typeof WorkRoute
 }
 
@@ -66,6 +76,13 @@ declare module '@tanstack/react-router' {
       path: '/work'
       fullPath: '/work'
       preLoaderRoute: typeof WorkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/why-nside': {
+      id: '/why-nside'
+      path: '/why-nside'
+      fullPath: '/why-nside'
+      preLoaderRoute: typeof WhyNsideRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/team': {
@@ -88,6 +105,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   TeamRoute: TeamRoute,
+  WhyNsideRoute: WhyNsideRoute,
   WorkRoute: WorkRoute,
 }
 export const routeTree = rootRouteImport

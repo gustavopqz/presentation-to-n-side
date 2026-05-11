@@ -60,6 +60,12 @@ function BeyondPage() {
             >
               What I bring to a team
             </Link>
+            <Link
+              to="/why-nside"
+              className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium hover:bg-secondary transition"
+            >
+              Why N-SIDE
+            </Link>
           </div>
         </Reveal>
 

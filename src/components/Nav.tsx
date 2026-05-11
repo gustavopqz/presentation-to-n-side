@@ -5,6 +5,7 @@ const links = [
   { to: "/", label: "Beyond the Resume" },
   { to: "/work", label: "Building Solutions" },
   { to: "/team", label: "What I Bring" },
+  { to: "/why-nside", label: "Why N-SIDE" },
 ] as const;
 
 export function Nav() {
@@ -24,9 +25,8 @@ export function Nav() {
                 <li key={l.to} className="relative">
                   <Link
                     to={l.to}
-                    className={`relative px-4 py-1.5 text-sm rounded-full transition-colors ${
-                      active ? "text-foreground" : "text-muted-foreground hover:text-foreground"
-                    }`}
+                    className={`relative px-4 py-1.5 text-sm rounded-full transition-colors ${active ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                      }`}
                   >
                     {active && (
                       <motion.span
@@ -42,7 +42,7 @@ export function Nav() {
             })}
           </ul>
           <a
-            href="mailto:gustavo.pasqua@example.com"
+            href="mailto:dev.gustavo@outlook.com"
             className="hidden sm:inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-4 py-1.5 text-sm font-medium hover:opacity-90 transition"
           >
             Get in touch
@@ -64,9 +64,8 @@ function MobileNav({ pathname }: { pathname: string }) {
             <li key={l.to}>
               <Link
                 to={l.to}
-                className={`px-3 py-1 text-xs rounded-full transition-colors ${
-                  active ? "bg-secondary text-foreground" : "text-muted-foreground"
-                }`}
+                className={`px-3 py-1 text-xs rounded-full transition-colors ${active ? "bg-secondary text-foreground" : "text-muted-foreground"
+                  }`}
               >
                 {l.label.split(" ")[0]}
               </Link>
