@@ -76,6 +76,8 @@ This isn't a generic portfolio. It is designed to feel like a written, thoughtfu
 - `Tailwind CSS` for styling utilities
 - `Framer Motion` for animated transitions
 - `Lucide React` for iconography
+- `Lovable` for Vite and router tooling
+- `GitHub Copilot` for code assistance and rapid prototyping
 
 ## Build and run
 
